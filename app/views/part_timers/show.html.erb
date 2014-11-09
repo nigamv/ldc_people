@@ -1,0 +1,50 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Last name:</b>
+  <%= @part_timer.last_name %>
+</p>
+
+<p>
+  <b>First name:</b>
+  <%= @part_timer.first_name %>
+</p>
+
+<p>
+  <b>Pennkey:</b>
+  <%= @part_timer.pennkey %>
+</p>
+
+<p>
+  <b>Lui username:</b>
+  <%= @part_timer.lui_username %>
+</p>
+
+<p>
+  <b>Havic userid:</b>
+  <%= @part_timer.havic_userID %>
+</p>
+
+<p>
+  <b>Alternate email:</b>
+  <%= @part_timer.alternate_email %>
+</p>
+
+<p>
+  <b>Job title:</b>
+  <%= @part_timer.job_title %>
+</p>
+
+<p>
+  <b>Level:</b>
+  <%= @part_timer.level %>
+</p>
+
+<p>
+  <b>Fy hours:</b>
+  <%= @part_timer.fy_hours %>
+</p>
+
+
+<%= link_to 'Edit', edit_part_timer_path(@part_timer) %> |
+<%= link_to 'Back', part_timers_path %>

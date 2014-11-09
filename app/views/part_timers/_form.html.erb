@@ -1,0 +1,53 @@
+<%= form_for(@part_timer) do |f| %>
+  <% if @part_timer.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@part_timer.errors.count, "error") %> prohibited this part_timer from being saved:</h2>
+
+      <ul>
+      <% @part_timer.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :last_name %><br />
+    <%= f.text_field :last_name %>
+  </div>
+  <div class="field">
+    <%= f.label :first_name %><br />
+    <%= f.text_field :first_name %>
+  </div>
+  <div class="field">
+    <%= f.label :pennkey %><br />
+    <%= f.text_field :pennkey %>
+  </div>
+  <div class="field">
+    <%= f.label :lui_username %><br />
+    <%= f.text_field :lui_username %>
+  </div>
+  <div class="field">
+    <%= f.label :havic_userID %><br />
+    <%= f.number_field :havic_userID %>
+  </div>
+  <div class="field">
+    <%= f.label :alternate_email %><br />
+    <%= f.text_field :alternate_email %>
+  </div>
+  <div class="field">
+    <%= f.label :job_title %><br />
+    <%= f.text_field :job_title %>
+  </div>
+  <div class="field">
+    <%= f.label :level %><br />
+    <%= f.text_field :level %>
+  </div>
+  <div class="field">
+    <%= f.label :fy_hours %><br />
+    <%= f.text_field :fy_hours %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

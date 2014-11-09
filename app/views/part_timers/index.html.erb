@@ -1,0 +1,39 @@
+<h1>Listing part_timers</h1>
+
+<table>
+  <tr>
+    <th>Last name</th>
+    <th>First name</th>
+    <th>Pennkey</th>
+    <th>Lui username</th>
+    <th>Havic userid</th>
+    <th>Alternate email</th>
+    <th>Job title</th>
+    <th>Level</th>
+    <th>Fy hours</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @part_timers.each do |part_timer| %>
+  <tr>
+    <td><%= part_timer.last_name %></td>
+    <td><%= part_timer.first_name %></td>
+    <td><%= part_timer.pennkey %></td>
+    <td><%= part_timer.lui_username %></td>
+    <td><%= part_timer.havic_userID %></td>
+    <td><%= part_timer.alternate_email %></td>
+    <td><%= part_timer.job_title %></td>
+    <td><%= part_timer.level %></td>
+    <td><%= part_timer.fy_hours %></td>
+    <td><%= link_to 'Show', part_timer %></td>
+    <td><%= link_to 'Edit', edit_part_timer_path(part_timer) %></td>
+    <td><%= link_to 'Destroy', part_timer, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Part timer', new_part_timer_path %>
