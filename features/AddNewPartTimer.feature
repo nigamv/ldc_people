@@ -8,7 +8,7 @@ Feature: Add new part-timers
   Given I am on the new part timer page
   
   When I add information for a new part timer
-  And save the results
+  And click 'Create Part timer'
   Then I should see all of the new information I've entered
-  And the message "Part timer database updated"
+  And some indication that the changes have been saved
     
