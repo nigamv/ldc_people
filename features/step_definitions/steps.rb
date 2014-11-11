@@ -5,6 +5,7 @@ end
 When(/add information for a new part timer/) do
   fill_in 'Last name', :with => "Root"
   fill_in 'First name', :with => "Colbert"
+  fill_in 'Job title', :with => "STUDENT WORKER A"
 end
 
 When(/click 'Create Part timer'/) do
