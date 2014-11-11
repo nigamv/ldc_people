@@ -14,14 +14,14 @@ Feature: Add new part-timers
   And some indication that the changes have been saved
 
   Scenario: missing name element
-  Given that I am on the new part timer page
+  Given I am on the new part timer page
 
   When I add information for a new part timer
   But leave 'first name' or 'last name' blank
   Then I should have to enter values for both before saving
 
   Scenario: invalid job title value
-  Given that I am on the new part timer page
+  Given I am on the new part timer page
 
   When I add information for a new part timer
   But do not provide 'STUDENT WORKER A' or 'TEMP EXTRA PERSON' as values

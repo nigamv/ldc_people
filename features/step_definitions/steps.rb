@@ -22,3 +22,20 @@ end
 Then(/some indication that the changes have been saved/) do
   assert page.has_content?("Part timer was successfully created.")
 end
+
+When(/^leave 'first name' or 'last name' blank$/) do
+  fill_in 'First name', :with => nil
+end
+
+    Then(/^I should have to enter values for both before saving$/) do
+      pending # express the regexp above with the code you wish you had
+      end
+
+      When(/^do not provide 'STUDENT WORKER A' or 'TEMP EXTRA PERSON' as values$/) do
+        pending # express the regexp above with the code you wish you had
+        end
+
+        Then(/^I should have to enter 'STUDENT WORKER A' or 'TEMP EXTRA PERSON' before saving$/) do
+          pending # express the regexp above with the code you wish you had
+          end
+
