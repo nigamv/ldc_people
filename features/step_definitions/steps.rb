@@ -24,18 +24,14 @@ Then(/some indication that the changes have been saved/) do
 end
 
 When(/^leave 'first name' or 'last name' blank$/) do
-  fill_in 'First name', :with => nil
+  fill_in 'First name', :with => ''
+  fill_in 'Last name', :with => ''
 end
 
-    Then(/^I should have to enter values for both before saving$/) do
-      pending # express the regexp above with the code you wish you had
-      end
+Then(/^I should see some errors$/) do
+  assert page.has_css?('div.field_with_errors')
+end
 
-      When(/^do not provide 'STUDENT WORKER A' or 'TEMP EXTRA PERSON' as values$/) do
-        pending # express the regexp above with the code you wish you had
-        end
-
-        Then(/^I should have to enter 'STUDENT WORKER A' or 'TEMP EXTRA PERSON' before saving$/) do
-          pending # express the regexp above with the code you wish you had
-          end
-
+When(/^do not provide 'STUDENT WORKER A' or 'TEMP EXTRA PERSON' as values for 'Job title'$/) do
+  fill_in 'Job title', :with => 'Big papa'
+end

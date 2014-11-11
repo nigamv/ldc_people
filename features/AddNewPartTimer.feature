@@ -18,11 +18,13 @@ Feature: Add new part-timers
 
   When I add information for a new part timer
   But leave 'first name' or 'last name' blank
-  Then I should have to enter values for both before saving
+  And click 'Create Part timer'
+  Then I should see some errors 
 
   Scenario: invalid job title value
   Given I am on the new part timer page
 
   When I add information for a new part timer
-  But do not provide 'STUDENT WORKER A' or 'TEMP EXTRA PERSON' as values
-  Then I should have to enter 'STUDENT WORKER A' or 'TEMP EXTRA PERSON' before saving
+  But do not provide 'STUDENT WORKER A' or 'TEMP EXTRA PERSON' as values for 'Job title'
+  And click 'Create Part timer'
+  Then I should see some errors 
