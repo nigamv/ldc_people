@@ -37,11 +37,11 @@
   </div>
   <div class="field">
     <%= f.label :job_title %><br />
-    <%= f.text_field :job_title %>
+    <%= f.select :job_title, ['--', 'STUDENT WORKER A', 'TEMP EXTRA PERSON'] %>
   </div>
   <div class="field">
     <%= f.label :level %><br />
-    <%= f.text_field :level %>
+    <%= f.select :level, ['--', 'trainee', 'junior', 'senior'] %>
   </div>
   <div class="field">
     <%= f.label :fy_hours %><br />

@@ -24,7 +24,7 @@ Feature: Add new part-timers
   Scenario: invalid job title value
   Given I am on the new part timer page
 
-  When I add information for a new part timer
-  But do not provide 'STUDENT WORKER A' or 'TEMP EXTRA PERSON' as values for 'Job title'
+  When I add partial information for a new part timer
+  And do not make a selection for 'Job title'
   And click 'Create Part timer'
   Then I should see some errors 
