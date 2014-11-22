@@ -21,10 +21,18 @@ Feature: Add new part-timers
   And click 'Create Part timer'
   Then I should see some errors 
 
-  Scenario: invalid job title value
+  Scenario: no job title selection
   Given I am on the new part timer page
 
-  When I add partial information for a new part timer
+  When I add first and last name and level for a new part timer
   And do not make a selection for 'Job title'
+  And click 'Create Part timer'
+  Then I should see some errors 
+  
+  Scenario: no level selection
+  Given I am on the new part timer page
+
+  When I add first and last name and job title for a new part timer
+  And do not make a selection for 'Level'
   And click 'Create Part timer'
   Then I should see some errors 

@@ -3,4 +3,5 @@ class PartTimer < ActiveRecord::Base
 
   validates :first_name, :last_name, :presence => true
   validates :job_title, :inclusion => {:in => ['STUDENT WORKER A', 'TEMP EXTRA PERSON']}
+  validates :level, :inclusion => {:in => ['trainee', 'junior', 'senior']}
 end
