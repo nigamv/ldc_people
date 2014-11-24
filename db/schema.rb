@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20141109190204) do
+ActiveRecord::Schema.define(:version => 20141123013742) do
 
   create_table "part_timers", :force => true do |t|
     t.string   "last_name"
@@ -23,8 +23,17 @@ ActiveRecord::Schema.define(:version => 20141109190204) do
     t.string   "job_title"
     t.string   "level"
     t.float    "fy_hours"
-    t.datetime "created_at",      :null => false
-    t.datetime "updated_at",      :null => false
+    t.datetime "created_at",           :null => false
+    t.datetime "updated_at",           :null => false
+    t.decimal  "average_weekly_hours"
+    t.datetime "last_raise"
+    t.datetime "hire_date"
+    t.datetime "last_time_sheet"
+    t.string   "status"
+    t.string   "language1"
+    t.string   "dialect1"
+    t.string   "language2"
+    t.string   "language3"
   end
 
 end

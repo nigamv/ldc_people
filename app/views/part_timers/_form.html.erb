@@ -44,8 +44,32 @@
     <%= f.select :level, ['--', 'trainee', 'junior', 'senior'] %>
   </div>
   <div class="field">
-    <%= f.label :fy_hours %><br />
-    <%= f.text_field :fy_hours %>
+    <%= f.label :last_raise %><br />
+    <%= f.select_date :last_raise %>
+  </div>
+  <div class="field">
+    <%= f.label :hire_date %><br />
+    <%= f.select_date :hire_date %>
+  </div>
+  <div class="field">
+    <%= f.label :status %><br />
+    <%= f.select :status, ['--', 'Active', 'Inactive', 'Deactivated', 'Removed'] %>
+  </div>
+  <div class="field">
+    <%= f.label :language1 %><br />
+    <%= f.text_field :language1 %>
+  </div>
+  <div class="field">
+    <%= f.label :dialect1 %><br />
+    <%= f.text_field :dialect1 %>
+  </div>
+  <div class="field">
+    <%= f.label :language2 %><br />
+    <%= f.text_field :language2 %>
+  </div>
+    <div class="field">
+    <%= f.label :language3 %><br />
+    <%= f.text_field :language3 %>
   </div>
   <div class="actions">
     <%= f.submit %>

@@ -41,10 +41,41 @@
 </p>
 
 <p>
-  <b>Fy hours:</b>
+  <b>Fiscal year hours:</b>
   <%= @part_timer.fy_hours %>
 </p>
 
-
+<p>
+  <b>Hire date:</b>
+  <%= @part_timer.hire_date.strftime("%B %d, %Y") %>
+</p>
+<p>
+  <b>Last raise:</b>
+  <%= @part_timer.last_raise.strftime("B %d, %Y") %>
+</p>
+<p>
+  <b>Last time sheet:</b>
+  <%= @part_timer.last_time_sheet.strftime("B %d, %Y") %>
+</p>
+<p>
+  <b>Status:</b>
+  <%= @part_timer.status %>
+</p>
+<p>
+  <b>1st language:</b>
+  <%= @part_timer.language1 %>
+</p>
+<p>
+  <b>1st dialect:</b>
+  <%= @part_timer.dialect1 %>
+</p>
+<p>
+  <b>2nd language:</b>
+  <%= @part_timer.language2 %>
+</p>
+<p>
+  <b>3rd language:</b>
+  <%= @part_timer.language3 %>
+</p>
 <%= link_to 'Edit', edit_part_timer_path(@part_timer) %> |
-<%= link_to 'Back', part_timers_path %>
+<%= link_to 'Back to full part timers list', part_timers_path %>

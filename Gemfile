@@ -7,6 +7,8 @@ gem 'rails', '3.2.19'
 
 gem 'sqlite3'
 
+gem 'annotate', '~> 2.6.5' 
+
 group :test, :development do
   gem 'cucumber-rails', :require => false
   gem 'cucumber-rails-training-wheels' # some pre-fabbed step definitions  
