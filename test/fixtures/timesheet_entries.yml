@@ -1,0 +1,69 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  entry_id: 1
+  name: MyString
+  penn_id: 1
+  entry_date: 2014-11-24 15:20:28
+  hours: 1.5
+  start_time: 2014-11-24 15:20:28
+  end_time: 2014-11-24 15:20:28
+  earnings_type_name: MyString
+  account_nickname: MyString
+  account_formatted: MyString
+  entry_category: MyString
+  payroll_status: MyString
+  supervisory_group_name: MyString
+  job_type_name: MyString
+  pay_period_start: 2014-11-24 15:20:28
+  pay_period_end: 2014-11-24 15:20:28
+  employee_approval_time: 2014-11-24 15:20:28
+  supervisor_approver_name: MyString
+  supervisor_approval_time: 2014-11-24 15:20:28
+  business_office_approver_name: MyString
+  business_office_approval_time: 2014-11-24 15:20:28
+  account_cnac: 1
+  account_org: 1
+  account_bc: 1
+  account_fund: 1
+  account_object: 1
+  account_program: 1
+  account_cref: 1
+  fed_to_payroll: 1
+  payroll_feed_date: 2014-11-24 15:20:28
+  payroll_transaction_type: MyString
+  hourly_rate: 1.5
+
+two:
+  entry_id: 1
+  name: MyString
+  penn_id: 1
+  entry_date: 2014-11-24 15:20:28
+  hours: 1.5
+  start_time: 2014-11-24 15:20:28
+  end_time: 2014-11-24 15:20:28
+  earnings_type_name: MyString
+  account_nickname: MyString
+  account_formatted: MyString
+  entry_category: MyString
+  payroll_status: MyString
+  supervisory_group_name: MyString
+  job_type_name: MyString
+  pay_period_start: 2014-11-24 15:20:28
+  pay_period_end: 2014-11-24 15:20:28
+  employee_approval_time: 2014-11-24 15:20:28
+  supervisor_approver_name: MyString
+  supervisor_approval_time: 2014-11-24 15:20:28
+  business_office_approver_name: MyString
+  business_office_approval_time: 2014-11-24 15:20:28
+  account_cnac: 1
+  account_org: 1
+  account_bc: 1
+  account_fund: 1
+  account_object: 1
+  account_program: 1
+  account_cref: 1
+  fed_to_payroll: 1
+  payroll_feed_date: 2014-11-24 15:20:28
+  payroll_transaction_type: MyString
+  hourly_rate: 1.5

@@ -1,0 +1,145 @@
+<%= form_for(@timesheet_entry) do |f| %>
+  <% if @timesheet_entry.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@timesheet_entry.errors.count, "error") %> prohibited this timesheet_entry from being saved:</h2>
+
+      <ul>
+      <% @timesheet_entry.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :entry_id %><br />
+    <%= f.number_field :entry_id %>
+  </div>
+  <div class="field">
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :penn_id %><br />
+    <%= f.number_field :penn_id %>
+  </div>
+  <div class="field">
+    <%= f.label :entry_date %><br />
+    <%= f.datetime_select :entry_date %>
+  </div>
+  <div class="field">
+    <%= f.label :hours %><br />
+    <%= f.text_field :hours %>
+  </div>
+  <div class="field">
+    <%= f.label :start_time %><br />
+    <%= f.datetime_select :start_time %>
+  </div>
+  <div class="field">
+    <%= f.label :end_time %><br />
+    <%= f.datetime_select :end_time %>
+  </div>
+  <div class="field">
+    <%= f.label :earnings_type_name %><br />
+    <%= f.text_field :earnings_type_name %>
+  </div>
+  <div class="field">
+    <%= f.label :account_nickname %><br />
+    <%= f.text_field :account_nickname %>
+  </div>
+  <div class="field">
+    <%= f.label :account_formatted %><br />
+    <%= f.text_field :account_formatted %>
+  </div>
+  <div class="field">
+    <%= f.label :entry_category %><br />
+    <%= f.text_field :entry_category %>
+  </div>
+  <div class="field">
+    <%= f.label :payroll_status %><br />
+    <%= f.text_field :payroll_status %>
+  </div>
+  <div class="field">
+    <%= f.label :supervisory_group_name %><br />
+    <%= f.text_field :supervisory_group_name %>
+  </div>
+  <div class="field">
+    <%= f.label :job_type_name %><br />
+    <%= f.text_field :job_type_name %>
+  </div>
+  <div class="field">
+    <%= f.label :pay_period_start %><br />
+    <%= f.datetime_select :pay_period_start %>
+  </div>
+  <div class="field">
+    <%= f.label :pay_period_end %><br />
+    <%= f.datetime_select :pay_period_end %>
+  </div>
+  <div class="field">
+    <%= f.label :employee_approval_time %><br />
+    <%= f.datetime_select :employee_approval_time %>
+  </div>
+  <div class="field">
+    <%= f.label :supervisor_approver_name %><br />
+    <%= f.text_field :supervisor_approver_name %>
+  </div>
+  <div class="field">
+    <%= f.label :supervisor_approval_time %><br />
+    <%= f.datetime_select :supervisor_approval_time %>
+  </div>
+  <div class="field">
+    <%= f.label :business_office_approver_name %><br />
+    <%= f.text_field :business_office_approver_name %>
+  </div>
+  <div class="field">
+    <%= f.label :business_office_approval_time %><br />
+    <%= f.datetime_select :business_office_approval_time %>
+  </div>
+  <div class="field">
+    <%= f.label :account_cnac %><br />
+    <%= f.number_field :account_cnac %>
+  </div>
+  <div class="field">
+    <%= f.label :account_org %><br />
+    <%= f.number_field :account_org %>
+  </div>
+  <div class="field">
+    <%= f.label :account_bc %><br />
+    <%= f.number_field :account_bc %>
+  </div>
+  <div class="field">
+    <%= f.label :account_fund %><br />
+    <%= f.number_field :account_fund %>
+  </div>
+  <div class="field">
+    <%= f.label :account_object %><br />
+    <%= f.number_field :account_object %>
+  </div>
+  <div class="field">
+    <%= f.label :account_program %><br />
+    <%= f.number_field :account_program %>
+  </div>
+  <div class="field">
+    <%= f.label :account_cref %><br />
+    <%= f.number_field :account_cref %>
+  </div>
+  <div class="field">
+    <%= f.label :fed_to_payroll %><br />
+    <%= f.number_field :fed_to_payroll %>
+  </div>
+  <div class="field">
+    <%= f.label :payroll_feed_date %><br />
+    <%= f.datetime_select :payroll_feed_date %>
+  </div>
+  <div class="field">
+    <%= f.label :payroll_transaction_type %><br />
+    <%= f.text_field :payroll_transaction_type %>
+  </div>
+  <div class="field">
+    <%= f.label :hourly_rate %><br />
+    <%= f.text_field :hourly_rate %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

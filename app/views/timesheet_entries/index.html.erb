@@ -1,0 +1,85 @@
+<h1>Listing timesheet_entries</h1>
+
+<table>
+  <tr>
+    <th>Entry</th>
+    <th>Name</th>
+    <th>Penn</th>
+    <th>Entry date</th>
+    <th>Hours</th>
+    <th>Start time</th>
+    <th>End time</th>
+    <th>Earnings type name</th>
+    <th>Account nickname</th>
+    <th>Account formatted</th>
+    <th>Entry category</th>
+    <th>Payroll status</th>
+    <th>Supervisory group name</th>
+    <th>Job type name</th>
+    <th>Pay period start</th>
+    <th>Pay period end</th>
+    <th>Employee approval time</th>
+    <th>Supervisor approver name</th>
+    <th>Supervisor approval time</th>
+    <th>Business office approver name</th>
+    <th>Business office approval time</th>
+    <th>Account cnac</th>
+    <th>Account org</th>
+    <th>Account bc</th>
+    <th>Account fund</th>
+    <th>Account object</th>
+    <th>Account program</th>
+    <th>Account cref</th>
+    <th>Fed to payroll</th>
+    <th>Payroll feed date</th>
+    <th>Payroll transaction type</th>
+    <th>Hourly rate</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @timesheet_entries.each do |timesheet_entry| %>
+  <tr>
+    <td><%= timesheet_entry.entry_id %></td>
+    <td><%= timesheet_entry.name %></td>
+    <td><%= timesheet_entry.penn_id %></td>
+    <td><%= timesheet_entry.entry_date %></td>
+    <td><%= timesheet_entry.hours %></td>
+    <td><%= timesheet_entry.start_time %></td>
+    <td><%= timesheet_entry.end_time %></td>
+    <td><%= timesheet_entry.earnings_type_name %></td>
+    <td><%= timesheet_entry.account_nickname %></td>
+    <td><%= timesheet_entry.account_formatted %></td>
+    <td><%= timesheet_entry.entry_category %></td>
+    <td><%= timesheet_entry.payroll_status %></td>
+    <td><%= timesheet_entry.supervisory_group_name %></td>
+    <td><%= timesheet_entry.job_type_name %></td>
+    <td><%= timesheet_entry.pay_period_start %></td>
+    <td><%= timesheet_entry.pay_period_end %></td>
+    <td><%= timesheet_entry.employee_approval_time %></td>
+    <td><%= timesheet_entry.supervisor_approver_name %></td>
+    <td><%= timesheet_entry.supervisor_approval_time %></td>
+    <td><%= timesheet_entry.business_office_approver_name %></td>
+    <td><%= timesheet_entry.business_office_approval_time %></td>
+    <td><%= timesheet_entry.account_cnac %></td>
+    <td><%= timesheet_entry.account_org %></td>
+    <td><%= timesheet_entry.account_bc %></td>
+    <td><%= timesheet_entry.account_fund %></td>
+    <td><%= timesheet_entry.account_object %></td>
+    <td><%= timesheet_entry.account_program %></td>
+    <td><%= timesheet_entry.account_cref %></td>
+    <td><%= timesheet_entry.fed_to_payroll %></td>
+    <td><%= timesheet_entry.payroll_feed_date %></td>
+    <td><%= timesheet_entry.payroll_transaction_type %></td>
+    <td><%= timesheet_entry.hourly_rate %></td>
+    <td><%= link_to 'Show', timesheet_entry %></td>
+    <td><%= link_to 'Edit', edit_timesheet_entry_path(timesheet_entry) %></td>
+    <td><%= link_to 'Destroy', timesheet_entry, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Timesheet entry', new_timesheet_entry_path %>

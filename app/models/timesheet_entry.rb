@@ -1,0 +1,3 @@
+class TimesheetEntry < ActiveRecord::Base
+  attr_accessible :account_bc, :account_cnac, :account_cref, :account_formatted, :account_fund, :account_nickname, :account_object, :account_org, :account_program, :business_office_approval_time, :business_office_approver_name, :earnings_type_name, :employee_approval_time, :end_time, :entry_category, :entry_date, :entry_id, :fed_to_payroll, :hourly_rate, :hours, :job_type_name, :name, :pay_period_end, :pay_period_start, :payroll_feed_date, :payroll_status, :payroll_transaction_type, :penn_id, :start_time, :supervisor_approval_time, :supervisor_approver_name, :supervisory_group_name
+end

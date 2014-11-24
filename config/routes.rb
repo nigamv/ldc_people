@@ -1,4 +1,7 @@
 LDCPeople::Application.routes.draw do
+  resources :timesheet_entries
+
+
   resources :part_timers
 
 

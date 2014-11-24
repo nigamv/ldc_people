@@ -1,0 +1,165 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Entry:</b>
+  <%= @timesheet_entry.entry_id %>
+</p>
+
+<p>
+  <b>Name:</b>
+  <%= @timesheet_entry.name %>
+</p>
+
+<p>
+  <b>Penn:</b>
+  <%= @timesheet_entry.penn_id %>
+</p>
+
+<p>
+  <b>Entry date:</b>
+  <%= @timesheet_entry.entry_date %>
+</p>
+
+<p>
+  <b>Hours:</b>
+  <%= @timesheet_entry.hours %>
+</p>
+
+<p>
+  <b>Start time:</b>
+  <%= @timesheet_entry.start_time %>
+</p>
+
+<p>
+  <b>End time:</b>
+  <%= @timesheet_entry.end_time %>
+</p>
+
+<p>
+  <b>Earnings type name:</b>
+  <%= @timesheet_entry.earnings_type_name %>
+</p>
+
+<p>
+  <b>Account nickname:</b>
+  <%= @timesheet_entry.account_nickname %>
+</p>
+
+<p>
+  <b>Account formatted:</b>
+  <%= @timesheet_entry.account_formatted %>
+</p>
+
+<p>
+  <b>Entry category:</b>
+  <%= @timesheet_entry.entry_category %>
+</p>
+
+<p>
+  <b>Payroll status:</b>
+  <%= @timesheet_entry.payroll_status %>
+</p>
+
+<p>
+  <b>Supervisory group name:</b>
+  <%= @timesheet_entry.supervisory_group_name %>
+</p>
+
+<p>
+  <b>Job type name:</b>
+  <%= @timesheet_entry.job_type_name %>
+</p>
+
+<p>
+  <b>Pay period start:</b>
+  <%= @timesheet_entry.pay_period_start %>
+</p>
+
+<p>
+  <b>Pay period end:</b>
+  <%= @timesheet_entry.pay_period_end %>
+</p>
+
+<p>
+  <b>Employee approval time:</b>
+  <%= @timesheet_entry.employee_approval_time %>
+</p>
+
+<p>
+  <b>Supervisor approver name:</b>
+  <%= @timesheet_entry.supervisor_approver_name %>
+</p>
+
+<p>
+  <b>Supervisor approval time:</b>
+  <%= @timesheet_entry.supervisor_approval_time %>
+</p>
+
+<p>
+  <b>Business office approver name:</b>
+  <%= @timesheet_entry.business_office_approver_name %>
+</p>
+
+<p>
+  <b>Business office approval time:</b>
+  <%= @timesheet_entry.business_office_approval_time %>
+</p>
+
+<p>
+  <b>Account cnac:</b>
+  <%= @timesheet_entry.account_cnac %>
+</p>
+
+<p>
+  <b>Account org:</b>
+  <%= @timesheet_entry.account_org %>
+</p>
+
+<p>
+  <b>Account bc:</b>
+  <%= @timesheet_entry.account_bc %>
+</p>
+
+<p>
+  <b>Account fund:</b>
+  <%= @timesheet_entry.account_fund %>
+</p>
+
+<p>
+  <b>Account object:</b>
+  <%= @timesheet_entry.account_object %>
+</p>
+
+<p>
+  <b>Account program:</b>
+  <%= @timesheet_entry.account_program %>
+</p>
+
+<p>
+  <b>Account cref:</b>
+  <%= @timesheet_entry.account_cref %>
+</p>
+
+<p>
+  <b>Fed to payroll:</b>
+  <%= @timesheet_entry.fed_to_payroll %>
+</p>
+
+<p>
+  <b>Payroll feed date:</b>
+  <%= @timesheet_entry.payroll_feed_date %>
+</p>
+
+<p>
+  <b>Payroll transaction type:</b>
+  <%= @timesheet_entry.payroll_transaction_type %>
+</p>
+
+<p>
+  <b>Hourly rate:</b>
+  <%= @timesheet_entry.hourly_rate %>
+</p>
+
+
+<%= link_to 'Edit', edit_timesheet_entry_path(@timesheet_entry) %> |
+<%= link_to 'Back', timesheet_entries_path %>
