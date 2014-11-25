@@ -10,6 +10,15 @@ class PartTimersController < ApplicationController
     end
   end
 
+  def sort
+    @part_timers = []
+    if (PartTimer.attribute_names.include? (params[:field])) then
+      @part_timers = PartTimer.order(params[:field])
+    end
+
+    render :index
+  end
+
   # GET /part_timers/1
   # GET /part_timers/1.json
   def show

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20141124192028) do
+ActiveRecord::Schema.define(:version => 20141124220937) do
 
   create_table "part_timers", :force => true do |t|
     t.string   "last_name"
@@ -71,6 +71,7 @@ ActiveRecord::Schema.define(:version => 20141124192028) do
     t.float    "hourly_rate"
     t.datetime "created_at",                    :null => false
     t.datetime "updated_at",                    :null => false
+    t.integer  "part_timer_id"
   end
 
 end

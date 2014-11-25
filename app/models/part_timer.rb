@@ -26,6 +26,8 @@
 #
 
 class PartTimer < ActiveRecord::Base
+  has_many :timesheet_entries
+
   attr_accessible :alternate_email, :first_name, :fy_hours, :havic_userID, 
                   :job_title, :last_name, :level, :lui_username, :pennkey, 
                   :status, :language1, :dialect1, :language2, :language3,

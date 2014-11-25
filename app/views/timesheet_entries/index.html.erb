@@ -1,5 +1,7 @@
 <h1>Listing timesheet_entries</h1>
 
+<%= link_to 'Timesheet Queries', new_timesheet_entry_path %>
+
 <table>
   <tr>
     <th>Entry</th>
@@ -74,12 +76,9 @@
     <td><%= timesheet_entry.payroll_transaction_type %></td>
     <td><%= timesheet_entry.hourly_rate %></td>
     <td><%= link_to 'Show', timesheet_entry %></td>
-    <td><%= link_to 'Edit', edit_timesheet_entry_path(timesheet_entry) %></td>
-    <td><%= link_to 'Destroy', timesheet_entry, method: :delete, data: { confirm: 'Are you sure?' } %></td>
   </tr>
 <% end %>
 </table>
 
 <br />
 
-<%= link_to 'New Timesheet entry', new_timesheet_entry_path %>
