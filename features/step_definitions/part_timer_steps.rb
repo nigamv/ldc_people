@@ -1,6 +1,20 @@
-Given(/^I'm on the new (.*) page$/) do |thing|
-  visit eval("new_#{thing}_path")
+Given(/^I am on the new part timer page$/) do
+  visit eval("new_part_timer_path")
 end
+
+Given(/^I am on the part timers page$/) do 
+  visit eval("part_timers_path")
+end
+
+
+When(/^I click the link to sort the table by last name$/) do
+  pending # express the regexp above with the code you wish you had
+end
+
+Then(/^I should see all of the part timers listed alphabetically by last name$/) do
+  pending # express the regexp above with the code you wish you had
+end
+
 
 When(/add information for a new part timer/) do
   fill_in 'Last name', :with => "Root"

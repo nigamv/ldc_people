@@ -24,6 +24,10 @@
     <%= f.text_field :pennkey %>
   </div>
   <div class="field">
+    <%= f.label :penn_id, 'Penn ID' %><br />
+    <%= f.number_field :penn_id %>
+  </div>
+  <div class="field">
     <%= f.label :lui_username %><br />
     <%= f.text_field :lui_username %>
   </div>
@@ -45,11 +49,11 @@
   </div>
   <div class="field">
     <%= f.label :last_raise %><br />
-    <%= f.date_select :last_raise %>
+    <%= f.date_select :last_raise, {:include_blank => true} %>
   </div>
   <div class="field">
     <%= f.label :hire_date %><br />
-    <%= f.date_select :hire_date %>
+    <%= f.date_select :hire_date, {:include_blank => true} %>
   </div>
   <div class="field">
     <%= f.label :status %><br />

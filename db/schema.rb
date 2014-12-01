@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20141124220937) do
+ActiveRecord::Schema.define(:version => 20141130163400) do
 
   create_table "part_timers", :force => true do |t|
     t.string   "last_name"
@@ -34,6 +34,7 @@ ActiveRecord::Schema.define(:version => 20141124220937) do
     t.string   "dialect1"
     t.string   "language2"
     t.string   "language3"
+    t.integer  "penn_id"
   end
 
   create_table "timesheet_entries", :force => true do |t|
