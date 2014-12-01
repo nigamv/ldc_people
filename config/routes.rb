@@ -7,6 +7,7 @@ LDCPeople::Application.routes.draw do
 
     collection do
       get 'sort/:field' => 'part_timers#sort'
+      get 'update_fy_hours' => 'part_timers#update_fy_hours'
     end
   end
 

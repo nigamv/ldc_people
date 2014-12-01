@@ -19,6 +19,21 @@ class PartTimersController < ApplicationController
     render :index
   end
 
+  def update_fy_hours
+    @part_timers = PartTimer.all
+    @part_timers.each do |pt|
+      hours = []
+      TimesheetEntry.all.each do |tse|
+        if pt.penn_id == tse.penn_id
+          hours << tse.hours
+        end
+      pt.update_attributes(:fy_hours => hours.inject{ |sum, x| sum + x })
+      end
+    end
+
+    render :index
+  end
+
   # GET /part_timers/1
   # GET /part_timers/1.json
   def show
