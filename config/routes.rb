@@ -1,5 +1,7 @@
 LDCPeople::Application.routes.draw do
-  resources :timesheet_entries
+  resources :timesheet_entries do
+    collection { post :import }
+  end
 
 
   resources :part_timers do

@@ -9,6 +9,11 @@ class TimesheetEntriesController < ApplicationController
       format.json { render json: @timesheet_entries }
     end
   end
+  
+  def import
+    TimesheetEntry.import(params[:file])
+    redirect_to :index, notice: "Timesheet entries imported."
+  end
 
   # GET /timesheet_entries/1
   # GET /timesheet_entries/1.json

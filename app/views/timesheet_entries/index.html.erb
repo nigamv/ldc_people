@@ -1,5 +1,13 @@
 <h1>Listing timesheet_entries</h1>
 
+<div>
+<h3>Import Timesheet Entries CSV File</h3>
+  <%= form_tag import_timesheet_entries_path, multipart: true do %>
+    <%= file_field_tag :file %>
+    <%= submit_tag "Import CSV" %>
+  <% end %>
+</div>
+
 <%= link_to 'Timesheet Queries', new_timesheet_entry_path %>
 
 <table>
