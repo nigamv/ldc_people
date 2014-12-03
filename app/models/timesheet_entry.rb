@@ -45,17 +45,24 @@ class TimesheetEntry < ActiveRecord::Base
   belongs_to :part_timer
 
   attr_accessible :account_bc, :account_cnac, :account_cref, :account_formatted, :account_fund, :account_nickname, :account_object, :account_org, :account_program, :business_office_approval_time, :business_office_approver_name, :earnings_type_name, :employee_approval_time, :end_time, :entry_category, :entry_date, :entry_id, :fed_to_payroll, :hourly_rate, :hours, :job_type_name, :name, :pay_period_end, :pay_period_start, :payroll_feed_date, :payroll_status, :payroll_transaction_type, :penn_id, :start_time, :supervisor_approval_time, :supervisor_approver_name, :supervisory_group_name, :part_timer_id
-  
+
   def self.import(file)
     CSV.foreach(file.path, headers: true) do |row|
+      tse_hash = row.to_hash
 
-      timesheet_entry_hash = row.to_hash
-      timesheet_entry = TimesheetEntry.where(id: timesheet_entry_hash["id"])
-
-      if timesheet_entry.count == 1
-        timesheet_entry.first.update_attributes(timesheet_entry_hash)
+      # entry_id is the timesheet entry ID assigned by the SAS timesheet system and
+      # in the CSVs that we import. Below ensures duplicates are only edited or skipped
+      existing_tse = TimesheetEntry.where(entry_id: row['entry_id'])
+      if existing_tse.count == 1
+        existing_tse.first.update_attributes(tse_hash.except(:part_timer_id))
       else
-        TimesheetEntry.create!(timesheet_entry_hash)
+        new_tse = TimesheetEntry.new(tse_hash)
+        PartTimer.all.each do |pt|
+          if pt.penn_id == new_tse.penn_id
+            new_tse.part_timer_id = pt.id
+          end
+        end
+        new_tse.save!
       end
     end 
   end

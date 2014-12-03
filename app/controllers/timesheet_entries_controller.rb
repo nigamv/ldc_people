@@ -12,7 +12,7 @@ class TimesheetEntriesController < ApplicationController
   
   def import
     TimesheetEntry.import(params[:file])
-    redirect_to :index, notice: "Timesheet entries imported."
+    redirect_to :action => :index, notice: "Timesheet entries imported."
   end
 
   # GET /timesheet_entries/1
