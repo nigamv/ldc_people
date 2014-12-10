@@ -1,4 +1,6 @@
 LDCPeople::Application.routes.draw do
+  devise_for :users
+
   resources :timesheet_entries do
     collection { post :import }
   end

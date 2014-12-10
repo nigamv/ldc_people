@@ -23,6 +23,7 @@
 #  dialect1             :string(255)
 #  language2            :string(255)
 #  language3            :string(255)
+#  penn_id              :integer
 #
 
 class PartTimer < ActiveRecord::Base
