@@ -5,14 +5,24 @@ gem 'rails', '3.2.19'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
+gem 'devise'
+
 gem 'sqlite3'
 
 gem 'annotate', '~> 2.6.5' 
 
 group :test, :development do
+  gem 'rspec-rails'
+  gem 'factory_girl_rails'
   gem 'cucumber-rails', :require => false
   gem 'cucumber-rails-training-wheels' # some pre-fabbed step definitions  
   gem 'database_cleaner' # to clear Cucumber's test database between runs
+end
+
+group :test do
+  gem 'simplecov', :require => false
+  gem 'faker'
+  gem 'guard-rspec'
   gem 'capybara'         # lets Cucumber pretend to be a web browser
   gem 'launchy'          # a useful debugging aid for user stories
 end
