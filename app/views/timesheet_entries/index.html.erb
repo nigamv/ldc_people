@@ -1,92 +1,102 @@
-<h1>Listing timesheet_entries</h1>
-
-<div>
-<h3>Import Timesheet Entries CSV File</h3>
-  <%= form_tag import_timesheet_entries_path, multipart: true do %>
-    <%= file_field_tag :file %>
-    <%= submit_tag "Import CSV" %>
-  <% end %>
+<%- model_class = TimesheetEntry -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human.pluralize.titleize %></h1>
 </div>
 
-<%= link_to 'Timesheet Queries', new_timesheet_entry_path %>
+<%= link_to t('.new', :default => t("helpers.links.new")),
+            new_timesheet_entry_path,
+            :class => 'btn btn-primary' %>
 
-<table>
-  <tr>
-    <th>Entry</th>
-    <th>Name</th>
-    <th>Penn</th>
-    <th>Entry date</th>
-    <th>Hours</th>
-    <th>Start time</th>
-    <th>End time</th>
-    <th>Earnings type name</th>
-    <th>Account nickname</th>
-    <th>Account formatted</th>
-    <th>Entry category</th>
-    <th>Payroll status</th>
-    <th>Supervisory group name</th>
-    <th>Job type name</th>
-    <th>Pay period start</th>
-    <th>Pay period end</th>
-    <th>Employee approval time</th>
-    <th>Supervisor approver name</th>
-    <th>Supervisor approval time</th>
-    <th>Business office approver name</th>
-    <th>Business office approval time</th>
-    <th>Account cnac</th>
-    <th>Account org</th>
-    <th>Account bc</th>
-    <th>Account fund</th>
-    <th>Account object</th>
-    <th>Account program</th>
-    <th>Account cref</th>
-    <th>Fed to payroll</th>
-    <th>Payroll feed date</th>
-    <th>Payroll transaction type</th>
-    <th>Hourly rate</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
-
-<% @timesheet_entries.each do |timesheet_entry| %>
-  <tr>
-    <td><%= timesheet_entry.entry_id %></td>
-    <td><%= timesheet_entry.name %></td>
-    <td><%= timesheet_entry.penn_id %></td>
-    <td><%= timesheet_entry.entry_date %></td>
-    <td><%= timesheet_entry.hours %></td>
-    <td><%= timesheet_entry.start_time %></td>
-    <td><%= timesheet_entry.end_time %></td>
-    <td><%= timesheet_entry.earnings_type_name %></td>
-    <td><%= timesheet_entry.account_nickname %></td>
-    <td><%= timesheet_entry.account_formatted %></td>
-    <td><%= timesheet_entry.entry_category %></td>
-    <td><%= timesheet_entry.payroll_status %></td>
-    <td><%= timesheet_entry.supervisory_group_name %></td>
-    <td><%= timesheet_entry.job_type_name %></td>
-    <td><%= timesheet_entry.pay_period_start %></td>
-    <td><%= timesheet_entry.pay_period_end %></td>
-    <td><%= timesheet_entry.employee_approval_time %></td>
-    <td><%= timesheet_entry.supervisor_approver_name %></td>
-    <td><%= timesheet_entry.supervisor_approval_time %></td>
-    <td><%= timesheet_entry.business_office_approver_name %></td>
-    <td><%= timesheet_entry.business_office_approval_time %></td>
-    <td><%= timesheet_entry.account_cnac %></td>
-    <td><%= timesheet_entry.account_org %></td>
-    <td><%= timesheet_entry.account_bc %></td>
-    <td><%= timesheet_entry.account_fund %></td>
-    <td><%= timesheet_entry.account_object %></td>
-    <td><%= timesheet_entry.account_program %></td>
-    <td><%= timesheet_entry.account_cref %></td>
-    <td><%= timesheet_entry.fed_to_payroll %></td>
-    <td><%= timesheet_entry.payroll_feed_date %></td>
-    <td><%= timesheet_entry.payroll_transaction_type %></td>
-    <td><%= timesheet_entry.hourly_rate %></td>
-    <td><%= link_to 'Show', timesheet_entry %></td>
-  </tr>
-<% end %>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th><%= model_class.human_attribute_name(:id) %></th>
+      <th><%= model_class.human_attribute_name(:entry_id) %></th>
+      <th><%= model_class.human_attribute_name(:name) %></th>
+      <th><%= model_class.human_attribute_name(:penn_id) %></th>
+      <th><%= model_class.human_attribute_name(:entry_date) %></th>
+      <th><%= model_class.human_attribute_name(:hours) %></th>
+      <th><%= model_class.human_attribute_name(:start_time) %></th>
+      <th><%= model_class.human_attribute_name(:end_time) %></th>
+      <th><%= model_class.human_attribute_name(:earnings_type_name) %></th>
+      <th><%= model_class.human_attribute_name(:account_nickname) %></th>
+      <th><%= model_class.human_attribute_name(:account_formatted) %></th>
+      <th><%= model_class.human_attribute_name(:entry_category) %></th>
+      <th><%= model_class.human_attribute_name(:payroll_status) %></th>
+      <th><%= model_class.human_attribute_name(:supervisory_group_name) %></th>
+      <th><%= model_class.human_attribute_name(:job_type_name) %></th>
+      <th><%= model_class.human_attribute_name(:pay_period_start) %></th>
+      <th><%= model_class.human_attribute_name(:pay_period_end) %></th>
+      <th><%= model_class.human_attribute_name(:employee_approval_time) %></th>
+      <th><%= model_class.human_attribute_name(:supervisor_approver_name) %></th>
+      <th><%= model_class.human_attribute_name(:supervisor_approval_time) %></th>
+      <th><%= model_class.human_attribute_name(:business_office_approver_name) %></th>
+      <th><%= model_class.human_attribute_name(:business_office_approval_time) %></th>
+      <th><%= model_class.human_attribute_name(:account_cnac) %></th>
+      <th><%= model_class.human_attribute_name(:account_org) %></th>
+      <th><%= model_class.human_attribute_name(:account_bc) %></th>
+      <th><%= model_class.human_attribute_name(:account_fund) %></th>
+      <th><%= model_class.human_attribute_name(:account_object) %></th>
+      <th><%= model_class.human_attribute_name(:account_program) %></th>
+      <th><%= model_class.human_attribute_name(:account_cref) %></th>
+      <th><%= model_class.human_attribute_name(:fed_to_payroll) %></th>
+      <th><%= model_class.human_attribute_name(:payroll_feed_date) %></th>
+      <th><%= model_class.human_attribute_name(:payroll_transaction_type) %></th>
+      <th><%= model_class.human_attribute_name(:hourly_rate) %></th>
+      <th><%= model_class.human_attribute_name(:part_timer_id) %></th>
+      <th><%= model_class.human_attribute_name(:created_at) %></th>
+      <th><%=t '.actions', :default => t("helpers.actions") %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @timesheet_entries.each do |timesheet_entry| %>
+      <tr>
+        <td><%= link_to timesheet_entry.id, timesheet_entry_path(timesheet_entry) %></td>
+        <td><%= timesheet_entry.entry_id %></td>
+        <td><%= timesheet_entry.name %></td>
+        <td><%= timesheet_entry.penn_id %></td>
+        <td><%= timesheet_entry.entry_date %></td>
+        <td><%= timesheet_entry.hours %></td>
+        <td><%= timesheet_entry.start_time %></td>
+        <td><%= timesheet_entry.end_time %></td>
+        <td><%= timesheet_entry.earnings_type_name %></td>
+        <td><%= timesheet_entry.account_nickname %></td>
+        <td><%= timesheet_entry.account_formatted %></td>
+        <td><%= timesheet_entry.entry_category %></td>
+        <td><%= timesheet_entry.payroll_status %></td>
+        <td><%= timesheet_entry.supervisory_group_name %></td>
+        <td><%= timesheet_entry.job_type_name %></td>
+        <td><%= timesheet_entry.pay_period_start %></td>
+        <td><%= timesheet_entry.pay_period_end %></td>
+        <td><%= timesheet_entry.employee_approval_time %></td>
+        <td><%= timesheet_entry.supervisor_approver_name %></td>
+        <td><%= timesheet_entry.supervisor_approval_time %></td>
+        <td><%= timesheet_entry.business_office_approver_name %></td>
+        <td><%= timesheet_entry.business_office_approval_time %></td>
+        <td><%= timesheet_entry.account_cnac %></td>
+        <td><%= timesheet_entry.account_org %></td>
+        <td><%= timesheet_entry.account_bc %></td>
+        <td><%= timesheet_entry.account_fund %></td>
+        <td><%= timesheet_entry.account_object %></td>
+        <td><%= timesheet_entry.account_program %></td>
+        <td><%= timesheet_entry.account_cref %></td>
+        <td><%= timesheet_entry.fed_to_payroll %></td>
+        <td><%= timesheet_entry.payroll_feed_date %></td>
+        <td><%= timesheet_entry.payroll_transaction_type %></td>
+        <td><%= timesheet_entry.hourly_rate %></td>
+        <td><%= timesheet_entry.part_timer_id %></td>
+        <td><%=l timesheet_entry.created_at %></td>
+        <td>
+          <%= link_to t('.edit', :default => t("helpers.links.edit")),
+                      edit_timesheet_entry_path(timesheet_entry), :class => 'btn btn-mini' %>
+          <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+                      timesheet_entry_path(timesheet_entry),
+                      :method => :delete,
+                      :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+                      :class => 'btn btn-mini btn-danger' %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
 </table>
-
-<br />
 

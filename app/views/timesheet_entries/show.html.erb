@@ -1,165 +1,85 @@
-<p id="notice"><%= notice %></p>
+<%- model_class = TimesheetEntry -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human.titleize %></h1>
+</div>
 
-<p>
-  <b>Entry:</b>
-  <%= @timesheet_entry.entry_id %>
-</p>
+<dl class="dl-horizontal">
+  <dt><strong><%= model_class.human_attribute_name(:entry_id) %>:</strong></dt>
+  <dd><%= @timesheet_entry.entry_id %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:name) %>:</strong></dt>
+  <dd><%= @timesheet_entry.name %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:penn_id) %>:</strong></dt>
+  <dd><%= @timesheet_entry.penn_id %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:entry_date) %>:</strong></dt>
+  <dd><%= @timesheet_entry.entry_date %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:hours) %>:</strong></dt>
+  <dd><%= @timesheet_entry.hours %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:start_time) %>:</strong></dt>
+  <dd><%= @timesheet_entry.start_time %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:end_time) %>:</strong></dt>
+  <dd><%= @timesheet_entry.end_time %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:earnings_type_name) %>:</strong></dt>
+  <dd><%= @timesheet_entry.earnings_type_name %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:account_nickname) %>:</strong></dt>
+  <dd><%= @timesheet_entry.account_nickname %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:account_formatted) %>:</strong></dt>
+  <dd><%= @timesheet_entry.account_formatted %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:entry_category) %>:</strong></dt>
+  <dd><%= @timesheet_entry.entry_category %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:payroll_status) %>:</strong></dt>
+  <dd><%= @timesheet_entry.payroll_status %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:supervisory_group_name) %>:</strong></dt>
+  <dd><%= @timesheet_entry.supervisory_group_name %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:job_type_name) %>:</strong></dt>
+  <dd><%= @timesheet_entry.job_type_name %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:pay_period_start) %>:</strong></dt>
+  <dd><%= @timesheet_entry.pay_period_start %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:pay_period_end) %>:</strong></dt>
+  <dd><%= @timesheet_entry.pay_period_end %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:employee_approval_time) %>:</strong></dt>
+  <dd><%= @timesheet_entry.employee_approval_time %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:supervisor_approver_name) %>:</strong></dt>
+  <dd><%= @timesheet_entry.supervisor_approver_name %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:supervisor_approval_time) %>:</strong></dt>
+  <dd><%= @timesheet_entry.supervisor_approval_time %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:business_office_approver_name) %>:</strong></dt>
+  <dd><%= @timesheet_entry.business_office_approver_name %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:business_office_approval_time) %>:</strong></dt>
+  <dd><%= @timesheet_entry.business_office_approval_time %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:account_cnac) %>:</strong></dt>
+  <dd><%= @timesheet_entry.account_cnac %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:account_org) %>:</strong></dt>
+  <dd><%= @timesheet_entry.account_org %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:account_bc) %>:</strong></dt>
+  <dd><%= @timesheet_entry.account_bc %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:account_fund) %>:</strong></dt>
+  <dd><%= @timesheet_entry.account_fund %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:account_object) %>:</strong></dt>
+  <dd><%= @timesheet_entry.account_object %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:account_program) %>:</strong></dt>
+  <dd><%= @timesheet_entry.account_program %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:account_cref) %>:</strong></dt>
+  <dd><%= @timesheet_entry.account_cref %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:fed_to_payroll) %>:</strong></dt>
+  <dd><%= @timesheet_entry.fed_to_payroll %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:payroll_feed_date) %>:</strong></dt>
+  <dd><%= @timesheet_entry.payroll_feed_date %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:payroll_transaction_type) %>:</strong></dt>
+  <dd><%= @timesheet_entry.payroll_transaction_type %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:hourly_rate) %>:</strong></dt>
+  <dd><%= @timesheet_entry.hourly_rate %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:part_timer_id) %>:</strong></dt>
+  <dd><%= @timesheet_entry.part_timer_id %></dd>
+</dl>
 
-<p>
-  <b>Name:</b>
-  <%= @timesheet_entry.name %>
-</p>
-
-<p>
-  <b>Penn:</b>
-  <%= @timesheet_entry.penn_id %>
-</p>
-
-<p>
-  <b>Entry date:</b>
-  <%= @timesheet_entry.entry_date %>
-</p>
-
-<p>
-  <b>Hours:</b>
-  <%= @timesheet_entry.hours %>
-</p>
-
-<p>
-  <b>Start time:</b>
-  <%= @timesheet_entry.start_time %>
-</p>
-
-<p>
-  <b>End time:</b>
-  <%= @timesheet_entry.end_time %>
-</p>
-
-<p>
-  <b>Earnings type name:</b>
-  <%= @timesheet_entry.earnings_type_name %>
-</p>
-
-<p>
-  <b>Account nickname:</b>
-  <%= @timesheet_entry.account_nickname %>
-</p>
-
-<p>
-  <b>Account formatted:</b>
-  <%= @timesheet_entry.account_formatted %>
-</p>
-
-<p>
-  <b>Entry category:</b>
-  <%= @timesheet_entry.entry_category %>
-</p>
-
-<p>
-  <b>Payroll status:</b>
-  <%= @timesheet_entry.payroll_status %>
-</p>
-
-<p>
-  <b>Supervisory group name:</b>
-  <%= @timesheet_entry.supervisory_group_name %>
-</p>
-
-<p>
-  <b>Job type name:</b>
-  <%= @timesheet_entry.job_type_name %>
-</p>
-
-<p>
-  <b>Pay period start:</b>
-  <%= @timesheet_entry.pay_period_start %>
-</p>
-
-<p>
-  <b>Pay period end:</b>
-  <%= @timesheet_entry.pay_period_end %>
-</p>
-
-<p>
-  <b>Employee approval time:</b>
-  <%= @timesheet_entry.employee_approval_time %>
-</p>
-
-<p>
-  <b>Supervisor approver name:</b>
-  <%= @timesheet_entry.supervisor_approver_name %>
-</p>
-
-<p>
-  <b>Supervisor approval time:</b>
-  <%= @timesheet_entry.supervisor_approval_time %>
-</p>
-
-<p>
-  <b>Business office approver name:</b>
-  <%= @timesheet_entry.business_office_approver_name %>
-</p>
-
-<p>
-  <b>Business office approval time:</b>
-  <%= @timesheet_entry.business_office_approval_time %>
-</p>
-
-<p>
-  <b>Account cnac:</b>
-  <%= @timesheet_entry.account_cnac %>
-</p>
-
-<p>
-  <b>Account org:</b>
-  <%= @timesheet_entry.account_org %>
-</p>
-
-<p>
-  <b>Account bc:</b>
-  <%= @timesheet_entry.account_bc %>
-</p>
-
-<p>
-  <b>Account fund:</b>
-  <%= @timesheet_entry.account_fund %>
-</p>
-
-<p>
-  <b>Account object:</b>
-  <%= @timesheet_entry.account_object %>
-</p>
-
-<p>
-  <b>Account program:</b>
-  <%= @timesheet_entry.account_program %>
-</p>
-
-<p>
-  <b>Account cref:</b>
-  <%= @timesheet_entry.account_cref %>
-</p>
-
-<p>
-  <b>Fed to payroll:</b>
-  <%= @timesheet_entry.fed_to_payroll %>
-</p>
-
-<p>
-  <b>Payroll feed date:</b>
-  <%= @timesheet_entry.payroll_feed_date %>
-</p>
-
-<p>
-  <b>Payroll transaction type:</b>
-  <%= @timesheet_entry.payroll_transaction_type %>
-</p>
-
-<p>
-  <b>Hourly rate:</b>
-  <%= @timesheet_entry.hourly_rate %>
-</p>
-
-
-<%= link_to 'Edit', edit_timesheet_entry_path(@timesheet_entry) %> |
-<%= link_to 'Back', timesheet_entries_path %>
+<div class="form-actions">
+  <%= link_to t('.back', :default => t("helpers.links.back")),
+              timesheet_entries_path, :class => 'btn'  %>
+  <%= link_to t('.edit', :default => t("helpers.links.edit")),
+              edit_timesheet_entry_path(@timesheet_entry), :class => 'btn' %>
+  <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+              timesheet_entry_path(@timesheet_entry),
+              :method => 'delete',
+              :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+              :class => 'btn btn-danger' %>
+</div>
