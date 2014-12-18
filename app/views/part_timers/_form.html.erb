@@ -1,81 +1,122 @@
-<%= form_for(@part_timer) do |f| %>
-  <% if @part_timer.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@part_timer.errors.count, "error") %> prohibited this part_timer from being saved:</h2>
-
-      <ul>
-      <% @part_timer.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
+<%= form_for @part_timer, :html => { :class => 'form-horizontal' } do |f| %>
+  <div class="control-group">
+    <%= f.label :last_name, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :last_name, :class => 'text_field' %>
     </div>
-  <% end %>
+  </div>
+  <div class="control-group">
+    <%= f.label :first_name, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :first_name, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :pennkey, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :pennkey, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :lui_username, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :lui_username, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :havic_userID, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.number_field :havic_userID, :class => 'number_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :alternate_email, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :alternate_email, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :job_title, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :job_title, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :level, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :level, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :fy_hours, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :fy_hours, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :average_weekly_hours, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :average_weekly_hours, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :last_raise, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.datetime_select :last_raise, :class => 'datetime_select' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :hire_date, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.datetime_select :hire_date, :class => 'datetime_select' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :last_time_sheet, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.datetime_select :last_time_sheet, :class => 'datetime_select' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :status, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :status, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :language1, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :language1, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :dialect1, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :dialect1, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :language2, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :language2, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :language3, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :language3, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :penn_id, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.number_field :penn_id, :class => 'number_field' %>
+    </div>
+  </div>
 
-  <div class="field">
-    <%= f.label :last_name %><br />
-    <%= f.text_field :last_name %>
-  </div>
-  <div class="field">
-    <%= f.label :first_name %><br />
-    <%= f.text_field :first_name %>
-  </div>
-  <div class="field">
-    <%= f.label :pennkey %><br />
-    <%= f.text_field :pennkey %>
-  </div>
-  <div class="field">
-    <%= f.label :penn_id, 'Penn ID' %><br />
-    <%= f.number_field :penn_id %>
-  </div>
-  <div class="field">
-    <%= f.label :lui_username %><br />
-    <%= f.text_field :lui_username %>
-  </div>
-  <div class="field">
-    <%= f.label :havic_userID %><br />
-    <%= f.number_field :havic_userID %>
-  </div>
-  <div class="field">
-    <%= f.label :alternate_email %><br />
-    <%= f.text_field :alternate_email %>
-  </div>
-  <div class="field">
-    <%= f.label :job_title %><br />
-    <%= f.select :job_title, ['--', 'STUDENT WORKER A', 'TEMP EXTRA PERSON'] %>
-  </div>
-  <div class="field">
-    <%= f.label :level %><br />
-    <%= f.select :level, ['--', 'trainee', 'junior', 'senior'] %>
-  </div>
-  <div class="field">
-    <%= f.label :last_raise %><br />
-    <%= f.date_select :last_raise, {:include_blank => true} %>
-  </div>
-  <div class="field">
-    <%= f.label :hire_date %><br />
-    <%= f.date_select :hire_date, {:include_blank => true} %>
-  </div>
-  <div class="field">
-    <%= f.label :status %><br />
-    <%= f.select :status, ['--', 'Active', 'Inactive', 'Deactivated', 'Removed'] %>
-  </div>
-  <div class="field">
-    <%= f.label :language1 %><br />
-    <%= f.text_field :language1 %>
-  </div>
-  <div class="field">
-    <%= f.label :dialect1 %><br />
-    <%= f.text_field :dialect1 %>
-  </div>
-  <div class="field">
-    <%= f.label :language2 %><br />
-    <%= f.text_field :language2 %>
-  </div>
-    <div class="field">
-    <%= f.label :language3 %><br />
-    <%= f.text_field :language3 %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
+  <div class="form-actions">
+    <%= f.submit nil, :class => 'btn btn-primary' %>
+    <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                part_timers_path, :class => 'btn' %>
   </div>
 <% end %>

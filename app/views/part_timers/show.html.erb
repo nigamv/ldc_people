@@ -1,85 +1,57 @@
-<p id="notice"><%= notice %></p>
+<%- model_class = PartTimer -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human.titleize %></h1>
+</div>
 
-<p>
-  <b>Last name:</b>
-  <%= @part_timer.last_name %>
-</p>
+<dl class="dl-horizontal">
+  <dt><strong><%= model_class.human_attribute_name(:last_name) %>:</strong></dt>
+  <dd><%= @part_timer.last_name %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:first_name) %>:</strong></dt>
+  <dd><%= @part_timer.first_name %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:pennkey) %>:</strong></dt>
+  <dd><%= @part_timer.pennkey %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:lui_username) %>:</strong></dt>
+  <dd><%= @part_timer.lui_username %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:havic_userID) %>:</strong></dt>
+  <dd><%= @part_timer.havic_userID %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:alternate_email) %>:</strong></dt>
+  <dd><%= @part_timer.alternate_email %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:job_title) %>:</strong></dt>
+  <dd><%= @part_timer.job_title %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:level) %>:</strong></dt>
+  <dd><%= @part_timer.level %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:fy_hours) %>:</strong></dt>
+  <dd><%= @part_timer.fy_hours %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:average_weekly_hours) %>:</strong></dt>
+  <dd><%= @part_timer.average_weekly_hours %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:last_raise) %>:</strong></dt>
+  <dd><%= @part_timer.last_raise %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:hire_date) %>:</strong></dt>
+  <dd><%= @part_timer.hire_date %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:last_time_sheet) %>:</strong></dt>
+  <dd><%= @part_timer.last_time_sheet %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:status) %>:</strong></dt>
+  <dd><%= @part_timer.status %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:language1) %>:</strong></dt>
+  <dd><%= @part_timer.language1 %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:dialect1) %>:</strong></dt>
+  <dd><%= @part_timer.dialect1 %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:language2) %>:</strong></dt>
+  <dd><%= @part_timer.language2 %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:language3) %>:</strong></dt>
+  <dd><%= @part_timer.language3 %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:penn_id) %>:</strong></dt>
+  <dd><%= @part_timer.penn_id %></dd>
+</dl>
 
-<p>
-  <b>First name:</b>
-  <%= @part_timer.first_name %>
-</p>
-
-<p>
-  <b>Pennkey:</b>
-  <%= @part_timer.pennkey %>
-</p>
-
-<p>
-  <b>Penn ID:</b>
-  <%= @part_timer.penn_id %>
-</p>
-<p>
-  <b>Lui username:</b>
-  <%= @part_timer.lui_username %>
-</p>
-
-<p>
-  <b>Havic userid:</b>
-  <%= @part_timer.havic_userID %>
-</p>
-
-<p>
-  <b>Alternate email:</b>
-  <%= @part_timer.alternate_email %>
-</p>
-
-<p>
-  <b>Job title:</b>
-  <%= @part_timer.job_title %>
-</p>
-
-<p>
-  <b>Level:</b>
-  <%= @part_timer.level %>
-</p>
-
-<p>
-  <b>Fiscal year hours:</b>
-  <%= @part_timer.fy_hours %>
-</p>
-
-<p>
-  <b>Hire date:</b>
-  <%= @part_timer.hire_date %>
-</p>
-<p>
-  <b>Last raise:</b>
-  <%= @part_timer.last_raise %>
-</p>
-<p>
-  <b>Last time sheet:</b>
-  <%= @part_timer.last_time_sheet %>
-</p>
-<p>
-  <b>Status:</b>
-  <%= @part_timer.status %>
-</p>
-<p>
-  <b>1st language:</b>
-  <%= @part_timer.language1 %>
-</p>
-<p>
-  <b>1st dialect:</b>
-  <%= @part_timer.dialect1 %>
-</p>
-<p>
-  <b>2nd language:</b>
-  <%= @part_timer.language2 %>
-</p>
-<p>
-  <b>3rd language:</b>
-  <%= @part_timer.language3 %>
-</p>
-<%= link_to 'Edit', edit_part_timer_path(@part_timer) %> |
-<%= link_to 'Back to full part timers list', part_timers_path %>
+<div class="form-actions">
+  <%= link_to t('.back', :default => t("helpers.links.back")),
+              part_timers_path, :class => 'btn'  %>
+  <%= link_to t('.edit', :default => t("helpers.links.edit")),
+              edit_part_timer_path(@part_timer), :class => 'btn' %>
+  <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+              part_timer_path(@part_timer),
+              :method => 'delete',
+              :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+              :class => 'btn btn-danger' %>
+</div>

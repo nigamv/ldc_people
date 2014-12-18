@@ -49,9 +49,10 @@
           <a class="brand" href="#">LDC People</a>
           <div class="container nav-collapse">
             <ul class="nav">
-              <li><%= link_to "Part Timers", "/path1"  %></li>
-              <li><%= link_to "Timesheet Entries", "/path2"  %></li>
+              <li><%= link_to "Part Timers", part_timers_path  %></li>
+              <li><%= link_to "Timesheet Entries", timesheet_entries_path  %></li>
               <li><%= link_to "Projects", "/path3"  %></li>
+              <li><%= link_to "Sign out", destroy_user_session_path, :method => :delete %>
             </ul>
           </div><!--/.nav-collapse -->
         </div>
