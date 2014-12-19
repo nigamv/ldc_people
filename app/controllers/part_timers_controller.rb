@@ -1,8 +1,9 @@
 class PartTimersController < ApplicationController
+  helper_method :sort_column, :sort_direction
   # GET /part_timers
   # GET /part_timers.json
   def index
-    @part_timers = PartTimer.all
+    @part_timers = PartTimer.order(sort_column + ' ' + sort_direction)
 
     respond_to do |format|
       format.html # index.html.erb
@@ -10,15 +11,7 @@ class PartTimersController < ApplicationController
     end
   end
 
-  def sort
-    @part_timers = []
-    if (PartTimer.attribute_names.include? (params[:field])) then
-      @part_timers = PartTimer.order(params[:field])
-    end
-
-    render :index
-  end
-
+  
   def update_fy_hours
     @part_timers = PartTimer.all
     @part_timers.each do |pt|
@@ -103,5 +96,14 @@ class PartTimersController < ApplicationController
       format.html { redirect_to part_timers_url }
       format.json { head :no_content }
     end
+  end
+  
+  private
+  def sort_column
+    params[:field] || "id"
+  end
+
+  def sort_direction
+    params[:direction] || "asc"
   end
 end

@@ -5,27 +5,14 @@
 <table class="table table-striped">
   <thead>
     <tr>
-      <th><%= model_class.human_attribute_name(:id) %></th>
-      <th><%= link_to model_class.human_attribute_name(:last_name), :sort => :last_name %></th>
-      <th><%= model_class.human_attribute_name(:first_name) %></th>
-      <th><%= model_class.human_attribute_name(:pennkey) %></th>
-      <th><%= model_class.human_attribute_name(:lui_username) %></th>
-      <th><%= model_class.human_attribute_name(:havic_userID) %></th>
-      <th><%= model_class.human_attribute_name(:alternate_email) %></th>
-      <th><%= model_class.human_attribute_name(:job_title) %></th>
-      <th><%= model_class.human_attribute_name(:level) %></th>
-      <th><%= model_class.human_attribute_name(:fy_hours) %></th>
-      <th><%= model_class.human_attribute_name(:average_weekly_hours) %></th>
-      <th><%= model_class.human_attribute_name(:last_raise) %></th>
-      <th><%= model_class.human_attribute_name(:hire_date) %></th>
-      <th><%= model_class.human_attribute_name(:last_time_sheet) %></th>
-      <th><%= model_class.human_attribute_name(:status) %></th>
-      <th><%= model_class.human_attribute_name(:language1) %></th>
-      <th><%= model_class.human_attribute_name(:dialect1) %></th>
-      <th><%= model_class.human_attribute_name(:language2) %></th>
-      <th><%= model_class.human_attribute_name(:language3) %></th>
-      <th><%= model_class.human_attribute_name(:penn_id) %></th>
-      <th><%= model_class.human_attribute_name(:created_at) %></th>
+      <th><%= sortable "id", "ID" %></th>
+      <th><%= sortable "last_name" %></th>
+      <th><%= sortable "first_name" %></th>
+      <th><%= sortable "fy_hours", "FY hours" %></th>
+      <th><%= sortable "average_weekly_hours" %></th>
+      <th><%= sortable "hire_date" %></th>
+      <th><%= sortable "last_time_sheet" %></th>
+      <th><%= sortable "status" %></th>
       <th><%=t '.actions', :default => t("helpers.actions") %></th>
     </tr>
   </thead>
@@ -35,24 +22,11 @@
         <td><%= link_to part_timer.id, part_timer_path(part_timer) %></td>
         <td><%= part_timer.last_name %></td>
         <td><%= part_timer.first_name %></td>
-        <td><%= part_timer.pennkey %></td>
-        <td><%= part_timer.lui_username %></td>
-        <td><%= part_timer.havic_userID %></td>
-        <td><%= part_timer.alternate_email %></td>
-        <td><%= part_timer.job_title %></td>
-        <td><%= part_timer.level %></td>
         <td><%= part_timer.fy_hours %></td>
         <td><%= part_timer.average_weekly_hours %></td>
-        <td><%= part_timer.last_raise %></td>
         <td><%= part_timer.hire_date %></td>
         <td><%= part_timer.last_time_sheet %></td>
         <td><%= part_timer.status %></td>
-        <td><%= part_timer.language1 %></td>
-        <td><%= part_timer.dialect1 %></td>
-        <td><%= part_timer.language2 %></td>
-        <td><%= part_timer.language3 %></td>
-        <td><%= part_timer.penn_id %></td>
-        <td><%=l part_timer.created_at %></td>
         <td>
           <%= link_to t('.edit', :default => t("helpers.links.edit")),
                       edit_part_timer_path(part_timer), :class => 'btn btn-mini' %>
