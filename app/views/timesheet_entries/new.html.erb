@@ -1,5 +1,10 @@
-<%- model_class = TimesheetEntry -%>
-<div class="page-header">
-  <h1><%=t '.title', :default => [:'helpers.titles.new', 'New %{model}'], :model => model_class.model_name.human.titleize %></h1>
+<h1>Import Timesheet Entries CSV File</h1>
+<div>
+  <%= form_tag import_timesheet_entries_path, multipart: true do %>
+    <%= file_field_tag :file %>
+    <%= submit_tag "Import CSV" %>
+  <% end %>
 </div>
-<%= render :partial => 'form' %>
+
+<br />
+
