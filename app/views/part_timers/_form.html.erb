@@ -38,25 +38,19 @@
   <div class="control-group">
     <%= f.label :job_title, :class => 'control-label' %>
     <div class="controls">
-      <%= f.text_field :job_title, :class => 'text_field' %>
+      <%= f.select :job_title, ['--', 'STUDENT WORKER A', 'TEMP EXTRA PERSON'], :class => 'dropdown'  %>
     </div>
   </div>
   <div class="control-group">
     <%= f.label :level, :class => 'control-label' %>
     <div class="controls">
-      <%= f.text_field :level, :class => 'text_field' %>
+      <%= f.select :level, ['--', 'trainee', 'junior', 'senior'], :class => 'drop_down' %>
     </div>
   </div>
   <div class="control-group">
     <%= f.label :fy_hours, :class => 'control-label' %>
     <div class="controls">
       <%= f.text_field :fy_hours, :class => 'text_field' %>
-    </div>
-  </div>
-  <div class="control-group">
-    <%= f.label :average_weekly_hours, :class => 'control-label' %>
-    <div class="controls">
-      <%= f.text_field :average_weekly_hours, :class => 'text_field' %>
     </div>
   </div>
   <div class="control-group">
@@ -69,12 +63,6 @@
     <%= f.label :hire_date, :class => 'control-label' %>
     <div class="controls">
       <%= f.datetime_select :hire_date, :class => 'datetime_select' %>
-    </div>
-  </div>
-  <div class="control-group">
-    <%= f.label :last_time_sheet, :class => 'control-label' %>
-    <div class="controls">
-      <%= f.datetime_select :last_time_sheet, :class => 'datetime_select' %>
     </div>
   </div>
   <div class="control-group">
