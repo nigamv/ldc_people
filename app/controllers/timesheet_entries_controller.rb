@@ -1,4 +1,6 @@
 class TimesheetEntriesController < ApplicationController
+  
+  
   # GET /timesheet_entries
   # GET /timesheet_entries.json
   def index
@@ -10,8 +12,12 @@ class TimesheetEntriesController < ApplicationController
     end
   end
 
+  def format
+
+  end
+
   def import
-    TimesheetEntry.import(params[:file])
+    TimesheetEntriesController.import(params[:file])
     redirect_to :action => :index, notice: "Timesheet entries imported."
   end
 
@@ -19,7 +25,6 @@ class TimesheetEntriesController < ApplicationController
   # GET /timesheet_entries/1.json
   def show
     @timesheet_entry = TimesheetEntry.find(params[:id])
-
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @timesheet_entry }
@@ -78,5 +83,32 @@ class TimesheetEntriesController < ApplicationController
       format.html { redirect_to timesheet_entries_url }
       format.json { head :no_content }
     end
+  end
+
+  def self.create_new_timesheet_entry(hash)
+    new_tse = TimesheetEntry.new(hash)
+    PartTimer.all.each do |pt|
+      if pt.penn_id == new_tse.penn_id
+        new_tse.part_timer_id = pt.id
+      end
+    end
+    new_tse.save!
+  end
+
+  def self.update_existing_timesheet_entry(existing_tse, hash)
+    # part_timer_id isn't updated since it's nil in the csv
+    existing_tse.first.update_attributes(hash.except(:part_timer_id))
+  end
+
+  def self.import(file)
+    CSV.foreach(file.path, headers: true) do |row|
+      tse_hash = row.to_hash
+      existing_tse = TimesheetEntry.where(entry_id: row['entry_id'])
+      if existing_tse.count == 1
+        update_existing_timesheet_entry(existing_tse, tse_hash)
+      else
+        create_new_timesheet_entry(tse_hash)
+      end
+    end 
   end
 end
